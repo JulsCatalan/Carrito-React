@@ -19,7 +19,7 @@ const CarritoList = () => {
       <ul>
         {items.map((item, index) => (
           <li key={index}>
-            Temperatura: {item.temperatura}, Distancia: {item.distancia}, Timestamp: {item.timestamp}
+            Temperatura: {item.temperatura}, Distancia: {item.distancia}, Presión: {item.presion}, Ejez: {item.ejez}, Timestamp: {item.tiempo}
           </li>
         ))}
       </ul>
@@ -28,3 +28,4 @@ const CarritoList = () => {
 };
 
 export default CarritoList;
+
