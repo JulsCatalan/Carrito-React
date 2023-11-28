@@ -6,7 +6,7 @@ import { dividerClasses } from '@mui/material';
 function App() {
   return (
     <div>
-      <h1>Mi app de Carrito en Cloud</h1>
+      <h1>Carrito en la Nube</h1>
       <CarritoList/>
     </div>
   );
