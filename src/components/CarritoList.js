@@ -1,20 +1,27 @@
 import React, { useState, useEffect } from 'react';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
-import { Paper } from '@mui/material';
-
-const CarritoList = () => {
-  const [items, setItems] = useState([]);
-
-  useEffect(() => {
-    // Realiza la solicitud GET a tu función Lambda
-    fetch('https://h74jmqypjb.execute-api.us-east-2.amazonaws.com/etapaConexionCarrito/lambda_handler', {
-      method: 'GET',
-    })
-      .then((response) => response.json())
-      .then((data) => setItems(data))
-      .catch((error) => console.error('Error fetching data:', error));
-  }, []);
-
+  import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+  import { Paper } from '@mui/material';
+  
+  const CarritoList = () => {
+    const [items, setItems] = useState([]);
+  
+    const fetchData = () => {
+      fetch('https://h74jmqypjb.execute-api.us-east-2.amazonaws.com/etapaConexionCarrito/lambda_handler', {
+        method: 'GET',
+      })
+        .then((response) => response.json())
+        .then((data) => setItems(data))
+        .catch((error) => console.error('Error fetching data:', error));
+    };
+  
+    useEffect(() => {
+      fetchData(); // Llama inmediatamente al cargar el componente
+      const interval = setInterval(fetchData, 5000); // Actualiza cada 5 segundos
+  
+      return () => clearInterval(interval); // Limpieza al desmontar
+    }, []);
+  
+  
   return (
     <div>
       <h1>Datos de Sensores</h1>
