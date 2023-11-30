@@ -26,58 +26,70 @@ import React, { useState, useEffect } from 'react';
     <div>
       <h1>Datos de Sensores</h1>
 
-      <Paper style={{ padding: "20px", marginBottom: "20px" }}>
+      <Paper style={{ padding: "20px", marginBottom: "20px",background: "#1c1c1c" }}>
         <h2>Temperatura</h2>
         <ResponsiveContainer width="100%" height={300}>
           <LineChart data={items}>
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="tiempo" />
-            <YAxis />
-            <Tooltip />
-            <Legend />
-            <Line type="monotone" dataKey="temperatura" stroke="#8884d8" activeDot={{ r: 8 }} />
+            <CartesianGrid strokeDasharray="3 3" stroke="white" />
+            <XAxis dataKey="tiempo" stroke="white" />
+            <YAxis stroke="white" />
+            <Tooltip 
+              contentStyle={{ backgroundColor: 'rgba(0, 0, 0, 0.8)', color: '#fff', border: 'none' }} 
+              itemStyle={{ color: '#fff' }} />
+            <Legend wrapperStyle={{ color: "white" }} />
+            <Line type="monotone" dataKey="temperatura" stroke="#ff0000" strokeWidth={3} 
+            style={{ filter: "drop-shadow(0 0 6px #8884d8)" }} activeDot={{ r: 8 }} />
           </LineChart>
         </ResponsiveContainer>
       </Paper>
 
-      <Paper style={{ padding: "20px", marginBottom: "20px" }}>
+      <Paper style={{ padding: "20px", marginBottom: "20px",background: "#1c1c1c"  }}>
         <h2>Distancia</h2>
         <ResponsiveContainer width="100%" height={300}>
           <LineChart data={items}>
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="tiempo" />
-            <YAxis />
-            <Tooltip />
-            <Legend />
-            <Line type="monotone" dataKey="distancia" stroke="#82ca9d" activeDot={{ r: 8 }} />
+            <CartesianGrid strokeDasharray="3 3"stroke="white" />
+            <XAxis dataKey="tiempo" stroke="white" />
+            <YAxis stroke="white"/>
+            <Tooltip 
+              contentStyle={{ backgroundColor: 'rgba(0, 0, 0, 0.8)', color: '#fff', border: 'none' }} 
+              itemStyle={{ color: '#fff' }} />
+            <Legend wrapperStyle={{ color: "white" }}/>
+            <Line type="monotone" dataKey="distancia" stroke="#00ff00" strokeWidth={3} 
+            style={{ filter: "drop-shadow(0 0 6px #8884d8)" }} activeDot={{ r: 8 }} />
           </LineChart>
         </ResponsiveContainer>
       </Paper>
 
-      <Paper style={{ padding: "20px", marginBottom: "20px" }}>
+      <Paper style={{ padding: "20px", marginBottom: "20px",background: "#1c1c1c"  }}>
         <h2>Presión</h2>
         <ResponsiveContainer width="100%" height={300}>
           <LineChart data={items}>
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="tiempo" />
-            <YAxis />
-            <Tooltip />
-            <Legend />
-            <Line type="monotone" dataKey="presion" stroke="#82a9d8" activeDot={{ r: 8 }} />
+            <CartesianGrid strokeDasharray="3 3" stroke="white" />
+            <XAxis dataKey="tiempo"stroke="white"/>
+            <YAxis stroke="white" />
+            <Tooltip 
+              contentStyle={{ backgroundColor: 'rgba(0, 0, 0, 0.8)', color: '#fff', border: 'none' }} 
+              itemStyle={{ color: '#fff' }} />
+            <Legend wrapperStyle={{ color: "white" }} />
+            <Line type="monotone" dataKey="presion" stroke="#00ffff" strokeWidth={3} 
+            style={{ filter: "drop-shadow(0 0 6px #8884d8)" }} activeDot={{ r: 8 }} />
           </LineChart>
         </ResponsiveContainer>
       </Paper>
 
-      <Paper style={{ padding: "20px", marginBottom: "20px" }}>
-        <h2>Ejez</h2>
+      <Paper style={{ padding: "20px", marginBottom: "20px",background: "#1c1c1c" }}>
+        <h2>Eje Z</h2>
         <ResponsiveContainer width="100%" height={300}>
           <LineChart data={items}>
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="tiempo" />
-            <YAxis />
-            <Tooltip />
-            <Legend />
-            <Line type="monotone" dataKey="ejez" stroke="#d884d8" activeDot={{ r: 8 }} />
+            <CartesianGrid strokeDasharray="3 3"  stroke="white"/>
+            <XAxis dataKey="tiempo" stroke="white" />
+            <YAxis  stroke="white"/>
+            <Tooltip 
+              contentStyle={{ backgroundColor: 'rgba(0, 0, 0, 0.8)', color: '#fff', border: 'none' }} 
+              itemStyle={{ color: '#fff' }} />
+            <Legend wrapperStyle={{ color: "white" }}/>
+            <Line type="monotone" dataKey="ejez" stroke="#ff8000"  strokeWidth={3} 
+            style={{ filter: "drop-shadow(0 0 6px #8884d8)" }} activeDot={{ r: 8 }} />
           </LineChart>
         </ResponsiveContainer>
       </Paper>
